@@ -44,7 +44,7 @@ We used the following transitions for SA (with different probabilities):
 
 Initial permutation was selected randomly and then improved with hill-climbing before starting SA.
 
-We used linear cooling schedule, and run the algorithm with different starting temperatures and for different time (from 10 minutes to several hours).
+We used linear cooling schedule, and ran the algorithm with different starting temperatures and for different durations (from 10 minutes to several hours).
 
 For computation, we rented a couple of 8-core servers on Linode, and kept them busy during day 2. It costed a few bucks. If we rented more servers, we could probably climb a few places on the scoreboard, but decided not to throw any more money on it (it truly felt wrong).
 
