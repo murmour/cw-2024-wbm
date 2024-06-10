@@ -32,7 +32,7 @@ Yes! We will master it!
 
 So, we dug up the write-ups of several teams from ICFPC 2023, and studied Simulated Annealing, and came up with this paragon of simplicity:
 
-SA is used to build a permutation of monsters. Once the permutation is fixed by SA, the solution is built deterministically. We move towards the current monster until its within hitting range, and also try to get into position for hitting as many of the following monsters as possible using a greedy algorithm. Then we hit the monsters in the order of the permutation until the next monster is out of reach, and then repeat until we ~~win contest~~ run out of available turns.
+SA is used to build a permutation of monsters. Once the permutation is fixed by SA, the solution is built deterministically. We move towards the current monster until its within hitting range, and also try to get into position for hitting as many of the following monsters as possible using a greedy algorithm. Then we hit the monsters in the order of the permutation until the next monster is out of reach, and then repeat until we ~~win the contest~~ run out of available turns.
 
 We used the following transitions for SA (with different probabilities):
 - Swapping two random neighboring monsters in the permutation;
