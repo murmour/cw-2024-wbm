@@ -8,7 +8,7 @@ Our staple approach in such contests is discrete optimization. It's our hammer, 
 
 Our first solution was based on Nested Monte Carlo Search ([paper](https://www.lamsade.dauphine.fr/~cazenave/papers/nested.pdf)), and it carried us through day one. We finished this day 25th, which was good, but not great, and the missing component was probably Beam Search, but we couldn't figure out how to implement it efficiently. Moreover, our attention soon shifted to something different...
 
-Looking at the scoreboard, we noticed that Wata is leading, and we couldn't stop wondering -- what could a single person team be doing, that is much better than what we do? Could it be something that is simple to implement, but maybe requires more computing resources?
+Observing the scoreboard, we noticed that Wata was leading, and we couldn't stop wondering -- what could a single person team be doing, that is much better than what we do? Could it be something that is simple to implement, but maybe requires more computing resources?
 
 Slowly, the gears turned in our heads, and we figured:
 
@@ -28,11 +28,11 @@ We will... strike the Japanese with Simulated Annealing... ourselves!
 
 Yes! We will master it!
 
-野生の魔術師に用心
+‼️ 野生の魔術師に用心 ‼️
 
 So, we dug up the write-ups of several teams from ICFPC 2023, and studied Simulated Annealing, and came up with this paragon of simplicity:
 
-SA is used on the permutation of monsters. Once the permutation is fixed by SA, the solution is built deterministically. We move towards the current monster until its within hitting range, and also try to get into position for hitting as many of the following monsters as possible using a greedy algorithm. Then we hit the monsters in the order of the permutation until the next monster is out of reach, and then repeat until we ~~win the contest~~ run out of available turns.
+SA is used to build a permutation of monsters. Once the permutation is fixed by SA, the solution is built deterministically. We move towards the current monster until its within hitting range, and also try to get into position for hitting as many of the following monsters as possible using a greedy algorithm. Then we hit the monsters in the order of the permutation until the next monster is out of reach, and then repeat until we ~~win contest~~ run out of available turns.
 
 We used the following transitions for SA (with different probabilities):
 - Swapping two random neighboring monsters in the permutation;
@@ -44,11 +44,11 @@ We used the following transitions for SA (with different probabilities):
 
 Initial permutation was selected randomly and then improved with hill-climbing before starting SA.
 
-We used linear cooling schedule, and ran the algorithm with different starting temperatures and for different durations (from 10 minutes to several hours).
+We used linear cooling schedule, and run the algorithm with different starting temperatures and for different time (from 10 minutes to several hours).
 
 For computation, we rented a couple of 8-core servers on Linode, and kept them busy during day 2. It costed a few bucks. If we rented more servers, we could probably climb a few places on the scoreboard, but decided not to throw any more money on it (it truly felt wrong).
 
-A couple of problems, namely 36 and 37 ("the citadel of death"), are resilient to SA, so in the last hours of the contest we built an interactive tool for playing games, and one crazy mage (Artem) solved #36 by hand, earning ~1.6m points (960 relative)! We had no time left to solve #37 though.
+A couple of problems, namely 36 and 37 ("the corridor of death"), are resilient to SA, so in the last hours of the contest we built an interactive tool for playing games, and one crazy mage (Artem) solved #36 by hand, earning ~1.6m points (960 relative)! We had no time left to solve #37 though.
 
 Here is Artem's solution in our visualizer:
 
